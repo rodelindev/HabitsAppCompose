@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "238167410512",
+    "project_id": "dailyhabits-e3a6a",
+    "storage_bucket": "dailyhabits-e3a6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238167410512:android:3ca5c1b7a7a01b53460e55",
+        "android_client_info": {
+          "package_name": "com.rodelindev.habitsappcourse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238167410512-kbblfbdhulqi4o96fnfm9f9ut2ouif89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnY0Ajo5hVhfK9r-TmytsMYyumX4MCBv0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238167410512-kbblfbdhulqi4o96fnfm9f9ut2ouif89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
