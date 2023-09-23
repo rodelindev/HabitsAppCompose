@@ -82,7 +82,10 @@ fun OnboardingPager(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 if (pagerState.currentPage == pages.lastIndex) {
-                    HabitButton(text = "Get Started", modifier = Modifier.fillMaxWidth()) {
+                    HabitButton(
+                        text = "Get Started",
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
                         onFinish()
                     }
                 } else {
@@ -94,11 +97,13 @@ fun OnboardingPager(
                         activeColor = MaterialTheme.colorScheme.tertiary,
                         inactiveColor = MaterialTheme.colorScheme.primary
                     )
-                    TextButton(onClick = {
-                        coroutineScope.launch {
-                            pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                    TextButton(
+                        onClick = {
+                            coroutineScope.launch {
+                                pagerState.animateScrollToPage(pagerState.currentPage + 1)
+                            }
                         }
-                    }) {
+                    ) {
                         Text(text = "Next", color = MaterialTheme.colorScheme.tertiary)
                     }
                 }

@@ -8,11 +8,11 @@ import com.rodelindev.habitsappcourse.onboarding.presentation.components.Onboard
 
 @Composable
 fun OnboardingScreen(
-    viewmodel: OnboardingViewModel = hiltViewModel(),
+    viewModel: OnboardingViewModel = hiltViewModel(),
     onFinish: () -> Unit
 ) {
-    LaunchedEffect(key1 = viewmodel.hasSeenOnboarding) {
-        if (viewmodel.hasSeenOnboarding) {
+    LaunchedEffect(key1 = viewModel.hasSeenOnboarding) {
+        if (viewModel.hasSeenOnboarding) {
             onFinish()
         }
     }
@@ -39,7 +39,10 @@ fun OnboardingScreen(
             image = R.drawable.onboarding4
         )
     )
-    OnboardingPager(pages = pages, onFinish = {
-        viewmodel.completeOnboarding()
-    })
+    OnboardingPager(
+        pages = pages,
+        onFinish = {
+            viewModel.completeOnboarding()
+        }
+    )
 }
