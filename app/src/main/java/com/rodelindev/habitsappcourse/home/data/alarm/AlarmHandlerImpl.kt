@@ -1,5 +1,6 @@
 package com.rodelindev.habitsappcourse.home.data.alarm
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
@@ -15,6 +16,7 @@ class AlarmHandlerImpl(
 ) : AlarmHandler {
     private val alarmManager = context.getSystemService(AlarmManager::class.java)
 
+    @SuppressLint("NewApi")
     override fun setRecurringAlarm(habit: Habit) {
         val nextOcurrance = calculateNextOcurrance(habit)
         alarmManager.setExactAndAllowWhileIdle(
@@ -24,6 +26,7 @@ class AlarmHandlerImpl(
         )
     }
 
+    @SuppressLint("NewApi")
     private fun createPrendingIntent(habit: Habit, dayOfWeek: DayOfWeek): PendingIntent {
         val intent = Intent(context, AlarmReceiver::class.java).apply {
             putExtra(AlarmReceiver.HABIT_ID, habit.id)
@@ -36,6 +39,7 @@ class AlarmHandlerImpl(
         )
     }
 
+    @SuppressLint("NewApi")
     private fun calculateNextOcurrance(habit: Habit): ZonedDateTime {
         val today = ZonedDateTime.now()
         var nextOcurrance = ZonedDateTime.of(today.toLocalDate(), habit.reminder, today.zone)
@@ -50,6 +54,7 @@ class AlarmHandlerImpl(
         return nextOcurrance
     }
 
+    @SuppressLint("NewApi")
     override fun cancel(habit: Habit) {
         val nextOcurrance = calculateNextOcurrance(habit)
         val pending = createPrendingIntent(habit, nextOcurrance.dayOfWeek)

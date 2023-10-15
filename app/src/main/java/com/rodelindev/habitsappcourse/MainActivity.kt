@@ -39,7 +39,6 @@ class MainActivity : ComponentActivity() {
                         logout = {
                             viewModel.logout()
                         }
-
                     )
                 }
             }
