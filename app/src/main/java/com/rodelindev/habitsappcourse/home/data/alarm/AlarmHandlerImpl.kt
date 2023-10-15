@@ -22,12 +22,12 @@ class AlarmHandlerImpl(
         alarmManager.setExactAndAllowWhileIdle(
             AlarmManager.RTC_WAKEUP,
             nextOcurrance.toTimeStamp(),
-            createPrendingIntent(habit, nextOcurrance.dayOfWeek)
+            createPendingIntent(habit, nextOcurrance.dayOfWeek)
         )
     }
 
     @SuppressLint("NewApi")
-    private fun createPrendingIntent(habit: Habit, dayOfWeek: DayOfWeek): PendingIntent {
+    private fun createPendingIntent(habit: Habit, dayOfWeek: DayOfWeek): PendingIntent {
         val intent = Intent(context, AlarmReceiver::class.java).apply {
             putExtra(AlarmReceiver.HABIT_ID, habit.id)
         }
@@ -57,7 +57,7 @@ class AlarmHandlerImpl(
     @SuppressLint("NewApi")
     override fun cancel(habit: Habit) {
         val nextOcurrance = calculateNextOcurrance(habit)
-        val pending = createPrendingIntent(habit, nextOcurrance.dayOfWeek)
+        val pending = createPendingIntent(habit, nextOcurrance.dayOfWeek)
         alarmManager.cancel(pending)
     }
 }
