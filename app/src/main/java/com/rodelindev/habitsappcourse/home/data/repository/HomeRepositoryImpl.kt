@@ -38,6 +38,7 @@ class HomeRepositoryImpl(
     private val alarmHandler: AlarmHandler,
     private val workManager: WorkManager
 ) : HomeRepository {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun getAllHabitsForSelectedDate(date: ZonedDateTime): Flow<List<Habit>> {
         val localFlow = dao.getAllHabitsForSelectedDate(date.toStartOfDateTimestamp())
             .map { it.map { it.toDomain() } }

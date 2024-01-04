@@ -18,7 +18,6 @@ import com.rodelindev.habitsappcourse.home.domain.home.usecase.GetHabitsForDateU
 import com.rodelindev.habitsappcourse.home.domain.home.usecase.HomeUseCases
 import com.rodelindev.habitsappcourse.home.domain.home.usecase.SyncHabitUseCase
 import com.rodelindev.habitsappcourse.home.domain.repository.HomeRepository
-import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
