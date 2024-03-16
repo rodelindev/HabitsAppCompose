@@ -62,9 +62,9 @@ fun HomeScreen(
             }
         }
     ) {
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             HomeAskPermission(permission = Manifest.permission.POST_NOTIFICATIONS)
-        }*/
+        }
         LazyColumn(
             modifier = Modifier.padding(it).padding(start = 20.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp),
