@@ -15,6 +15,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -22,6 +23,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.rodelindev.habitsappcourse.R
 
 @Composable
 fun HabitPasswordTextField(
@@ -31,7 +33,7 @@ fun HabitPasswordTextField(
     modifier: Modifier = Modifier,
     placeholder: String = "Password",
     errorMessage: String? = null,
-    leadingIcon: ImageVector? = Icons.Outlined.Lock,
+    leadingIcon: ImageVector? = ImageVector.vectorResource(R.drawable.ic_lock),
     isEnabled: Boolean = true,
     keyboardOptions: KeyboardOptions = KeyboardOptions(),
     keyboardActions: KeyboardActions = KeyboardActions(),
@@ -136,7 +138,7 @@ fun HabitTextFieldPreview() {
     HabitTextField(
         value = "",
         onValueChange = {},
-        leadingIcon = Icons.Outlined.Lock,
+        leadingIcon = ImageVector.vectorResource(R.drawable.ic_lock),
         placeholder = "Password",
         isPassword = true,
         contentDescription = ""
@@ -149,7 +151,7 @@ fun HabitTextFieldErrorPreview() {
     HabitTextField(
         value = "",
         onValueChange = {},
-        leadingIcon = Icons.Outlined.Lock,
+        leadingIcon = ImageVector.vectorResource(R.drawable.ic_lock),
         placeholder = "Password",
         isPassword = true,
         errorMessage = "Invalid Password",
