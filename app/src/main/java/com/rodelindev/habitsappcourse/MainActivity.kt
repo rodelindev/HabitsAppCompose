@@ -33,9 +33,7 @@ class MainActivity : ComponentActivity() {
                     NavigationHost(
                         navHostController = navController,
                         startDestination = getStartDestination(),
-                        logout = {
-                            viewModel.logout()
-                        }
+                        logout = viewModel::logout
                     )
                 }
             }
@@ -43,14 +41,10 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun getStartDestination(): NavigationRoute {
-        return if (viewModel.isLoggedIn) {
-            NavigationRoute.Home
-        } else {
-            if (viewModel.hasSeenOnboarding) {
-                NavigationRoute.Login
-            } else {
-                NavigationRoute.Onboarding
-            }
+        return when {
+            viewModel.isLoggedIn -> NavigationRoute.Home
+            viewModel.hasSeenOnboarding -> NavigationRoute.Login
+            else -> NavigationRoute.Onboarding
         }
     }
 }

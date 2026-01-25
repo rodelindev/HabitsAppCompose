@@ -14,8 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val hasSeenOnboardingUseCase: HasSeenOnboardingUseCase,
-    private val getUserIdUseCase: GetUserIdUseCase,
+    hasSeenOnboardingUseCase: HasSeenOnboardingUseCase,
+    getUserIdUseCase: GetUserIdUseCase,
     private val logoutUseCase: LogoutUseCase
 ) : ViewModel() {
 
