@@ -17,7 +17,12 @@ fun HabitButton(
     isEnabled: Boolean = true,
     onClick: () -> Unit
 ) {
-    Button(onClick = onClick, modifier = modifier, shape = RoundedCornerShape(8.dp), enabled = isEnabled) {
+    Button(
+        onClick = onClick,
+        modifier = modifier,
+        shape = RoundedCornerShape(8.dp),
+        enabled = isEnabled
+    ) {
         Text(
             text = text,
             style = MaterialTheme.typography.bodyMedium.copy(

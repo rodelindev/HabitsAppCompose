@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.rodelindev.habitsappcourse.R
 import com.rodelindev.habitsappcourse.authentication.presentation.login.components.LoginForm
 import com.rodelindev.habitsappcourse.core.presentation.HabitTitle

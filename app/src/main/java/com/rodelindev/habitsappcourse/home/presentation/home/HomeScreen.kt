@@ -18,7 +18,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.rodelindev.habitsappcourse.R
 import com.rodelindev.habitsappcourse.home.presentation.home.components.HomeAskPermission
 import com.rodelindev.habitsappcourse.home.presentation.home.components.HomeDateSelector
@@ -31,19 +31,22 @@ fun HomeScreen(
     onNewHabit: () -> Unit,
     onSettings: () -> Unit,
     onEditHabit: (String) -> Unit,
-    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val state = viewModel.state
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
-            CenterAlignedTopAppBar(title = {
-                Text(text = "Home")
-            }, navigationIcon = {
-                IconButton(onClick = onSettings) {
-                    Icon(imageVector = Icons.Default.Settings, contentDescription = "settings")
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(text = "Home")
+                },
+                navigationIcon = {
+                    IconButton(onClick = onSettings) {
+                        Icon(imageVector = Icons.Default.Settings, contentDescription = "settings")
+                    }
                 }
-            })
+            )
         },
         floatingActionButton = {
             FloatingActionButton(
@@ -66,7 +69,9 @@ fun HomeScreen(
             HomeAskPermission(permission = Manifest.permission.POST_NOTIFICATIONS)
         }
         LazyColumn(
-            modifier = Modifier.padding(it).padding(start = 20.dp),
+            modifier = Modifier
+                .padding(it)
+                .padding(start = 20.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp),
             contentPadding = PaddingValues(bottom = 20.dp)
         ) {
@@ -80,7 +85,9 @@ fun HomeScreen(
             }
             item {
                 Row(
-                    modifier = Modifier.fillMaxWidth().padding(end = 20.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(end = 20.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
