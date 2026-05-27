@@ -11,9 +11,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -44,7 +44,7 @@ fun HabitPasswordTextField(
     isEnabled: Boolean = true,
     keyboardOptions: KeyboardOptions = KeyboardOptions(),
     keyboardActions: KeyboardActions = KeyboardActions(),
-    backgroundColor: Color = MaterialTheme.colorScheme.background
+    backgroundColor: Color = MaterialTheme.colorScheme.background,
 ) {
     HabitTextField(
         value = value,
@@ -76,7 +76,7 @@ fun HabitTextField(
     isEnabled: Boolean = true,
     keyboardOptions: KeyboardOptions = KeyboardOptions(),
     keyboardActions: KeyboardActions = KeyboardActions(),
-    backgroundColor: Color = MaterialTheme.colorScheme.background
+    backgroundColor: Color = MaterialTheme.colorScheme.background,
 ) {
     var hidePassword by remember {
         mutableStateOf(true)
@@ -115,18 +115,17 @@ fun HabitTextField(
             placeholder = { Text(text = placeholder) },
             singleLine = true,
             shape = RoundedCornerShape(12.dp),
-            colors = TextFieldDefaults.outlinedTextFieldColors(
-                textColor = MaterialTheme.colorScheme.primary,
-                containerColor = backgroundColor,
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedTextColor = MaterialTheme.colorScheme.primary,
+                unfocusedTextColor = MaterialTheme.colorScheme.primary,
+                focusedContainerColor = backgroundColor,
+                unfocusedContainerColor = backgroundColor,
                 focusedBorderColor = Color.Transparent,
                 unfocusedBorderColor = Color.Transparent,
                 focusedLeadingIconColor = MaterialTheme.colorScheme.primary,
-                placeholderColor = MaterialTheme.colorScheme.tertiary.copy(
-                    alpha = 0.5f
-                ),
-                unfocusedLeadingIconColor = MaterialTheme.colorScheme.tertiary.copy(
-                    alpha = 0.5f
-                )
+                unfocusedLeadingIconColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5f),
+                focusedPlaceholderColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5f),
+                unfocusedPlaceholderColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.5f)
             ),
             visualTransformation = if (isPassword && hidePassword) PasswordVisualTransformation() else VisualTransformation.None,
             keyboardOptions = keyboardOptions,
@@ -138,6 +137,20 @@ fun HabitTextField(
         }
     }
 }
+
+/*OutlinedTextFieldDefaults.colors().copy(
+textColor = MaterialTheme.colorScheme.primary,
+containerColor = backgroundColor,
+focusedBorderColor = Color.Transparent,
+unfocusedBorderColor = Color.Transparent,
+focusedLeadingIconColor = MaterialTheme.colorScheme.primary,
+placeholderColor = MaterialTheme.colorScheme.tertiary.copy(
+alpha = 0.5f
+),
+unfocusedLeadingIconColor = MaterialTheme.colorScheme.tertiary.copy(
+alpha = 0.5f
+)
+)*/
 
 @Preview
 @Composable

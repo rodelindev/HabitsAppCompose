@@ -36,10 +36,7 @@ fun HabitCheckbox(
             .size(35.dp)
             .clip(RoundedCornerShape(12.dp))
             .background(color = backgroundColor)
-            .clickable(
-                interactionSource = remember { MutableInteractionSource() },
-                indication = LocalIndication.current
-            ) {
+            .clickable {
                 onCheckedChange()
             },
         contentAlignment = Alignment.Center

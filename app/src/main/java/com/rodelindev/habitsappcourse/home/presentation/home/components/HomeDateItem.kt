@@ -41,10 +41,7 @@ fun HomeDateItem(
                 .clip(RoundedCornerShape(12.dp))
                 .background(Color.White)
                 .size(50.dp)
-                .clickable(
-                    interactionSource = remember { MutableInteractionSource() },
-                    indication = LocalIndication.current
-                ) {
+                .clickable {
                     onClick()
                 },
             contentAlignment = Alignment.Center

@@ -35,10 +35,7 @@ fun HomeHabit(
         modifier = modifier.fillMaxWidth()
             .clip(RoundedCornerShape(topStart = 12.dp, bottomStart = 12.dp))
             .background(Color.White)
-            .clickable(
-                interactionSource = remember { MutableInteractionSource() },
-                indication = LocalIndication.current
-            ) {
+            .clickable {
                 onHabitClick()
             }
             .padding(19.dp),

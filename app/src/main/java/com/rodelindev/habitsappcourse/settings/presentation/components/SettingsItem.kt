@@ -35,10 +35,7 @@ fun SettingsItem(
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(12.dp))
-            .clickable(
-                interactionSource = remember { MutableInteractionSource() },
-                indication = LocalIndication.current
-            ) {
+            .clickable {
                 onClick()
             }
             .background(Color.White)

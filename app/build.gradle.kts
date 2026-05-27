@@ -86,7 +86,7 @@ dependencies {
     implementation(libs.clock)
 
     //Material Icons extended
-    //implementation("androidx.compose.material:material-icons-extended:1.7.8")
+    implementation("androidx.compose.material:material-icons-extended:1.7.8")
 
     //Compose Navigation
     implementation(libs.androidx.navigation.compose)

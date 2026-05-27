@@ -37,10 +37,7 @@ fun DetailReminder(
             .fillMaxWidth()
             .clip(RoundedCornerShape(12.dp))
             .background(Color.White)
-            .clickable(
-                interactionSource = remember { MutableInteractionSource() },
-                indication = LocalIndication.current
-            ) {
+            .clickable {
                 onTimeClick()
             }
             .padding(vertical = 17.dp, horizontal = 20.dp),
