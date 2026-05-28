@@ -8,5 +8,5 @@ plugins {
     //Dagger Hilt
     alias(libs.plugins.hilt.android) apply false
     //Google service
-    id ("com.google.gms.google-services") version "4.3.15" apply false
+    alias(libs.plugins.google.service) apply false
 }

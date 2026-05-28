@@ -11,7 +11,7 @@ plugins {
     // Dagger hilt
     alias(libs.plugins.hilt.android)
     //Google Service
-    id("com.google.gms.google-services")
+    alias(libs.plugins.google.service)
 }
 
 android {
@@ -61,17 +61,10 @@ android {
 
 dependencies {
 
-    /*constraints {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
-            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
-        }
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
-            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
-        }
-    }*/
     //Get day of week api 25 or lower
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
+    // Android Core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
